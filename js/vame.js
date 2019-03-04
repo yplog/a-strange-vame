@@ -3,12 +3,12 @@ new Vue({
     data: {
         playerAttackPower: 0,
         playerDefensePower: 0,
-        playerHealt: 0,
-        playerMaxHealt: 0,
+        playerhealth: 0,
+        playerMaxhealth: 0,
         enemyAttackPower: 0,
         enemyDefensePower: 0,
-        enemyHealt: 0,
-        enemyMaxHealt: 0
+        enemyhealth: 0,
+        enemyMaxhealth: 0
     },
     methods: {
         d20: function(){
@@ -17,51 +17,48 @@ new Vue({
         newGame: function(){
             this.playerAttackPower = this.d20();
             this.playerDefensePower = this.d20();
-            this.playerHealt = this.d20() * 5;
-            this.playerMaxHealt = this.playerHealt;
+            this.playerhealth = this.d20() * 5;
+            this.playerMaxhealth = this.playerhealth;
             this.enemyAttackPower = this.d20();
             this.enemyDefensePower = this.d20();
-            this.enemyHealt = this.d20() * 5;
-            this.enemyMaxHealt = this.enemyHealt;
+            this.enemyhealth = this.d20() * 5;
+            this.enemyMaxhealth = this.enemyhealth;
         },
         playerAttack: function(){
-            if (this.enemyHealt > 0) {
-                this.enemyHealt -= this.playerAttackPower;
+            if (this.enemyhealth > 0) {
+                this.enemyhealth -= this.playerAttackPower;
                 (this.enemyAction() == 1) ? this.enemyAttack() : this.enemyDefense();
             }
-            this.healtController();
+            this.healthController();
         },
         playerDefense: function(){
-            this.healtController();
+            this.healthController();
             if (this.enemyAction == 1) {
-                this.playerHealt -= this.enemyAttackPower - this.playerDefensePower;
+                this.playerhealth -= this.enemyAttackPower - this.playerDefensePower;
             } else {
-                this.playerHealt -= (this.playerDefensePower + this.enemyDefensePower) / 2;
-                this.enemyHealt -= (this.playerDefensePower + this.enemyDefensePower) / 2;
+                this.playerhealth -= (this.playerDefensePower + this.enemyDefensePower) / 2;
+                this.enemyhealth -= (this.playerDefensePower + this.enemyDefensePower) / 2;
             }
-            this.healtController();
+            this.healthController();
             
         },
         enemyAttack: function(){
-            if (this.playerHealt > 0) {
-                this.playerHealt -= this.enemyAttackPower;
-                this.healtController();
-            } else {
-                alert("You Lost");
+            if (this.playerhealth > 0) {
+                this.playerhealth -= this.enemyAttackPower;
             }
         },
         enemyDefense: function(){
-            this.healtController();
-            this.enemyHealt -= this.enemyDefensePower - this.playerAttackPower;
-            this.healtController();
+            if (this.playerhealth > 0) {
+                this.enemyhealth -= this.enemyDefensePower - this.playerAttackPower;
+            }
         },
         enemyAction: function(){
             return Math.floor(Math.random() * 2) + 1;
         },
-        healtController: function(){
-            if (this.enemyHealt < 0) {
+        healthController: function(){
+            if (this.enemyhealth < 0) {
                 alert("You Win!");
-            } else if (this.playerHealt < 0){
+            } else if (this.playerhealth < 0){
                 alert("You Lost!");
             }
         }

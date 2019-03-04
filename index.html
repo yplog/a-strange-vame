@@ -21,7 +21,7 @@
             <div class="col">
                 <h2 class="text-center">Player</h2>
                 <div class="progress">
-                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" v-bind:style="{width: playerHealt + '%'}" v-bind:aria-valuenow="playerHealt" aria-valuemin="0" v-bind:aria-valuemax="playerMaxHealt">{{ playerHealt }}</div>
+                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" v-bind:style="{width: playerhealth + '%'}" v-bind:aria-valuenow="playerhealth" aria-valuemin="0" v-bind:aria-valuemax="playerMaxhealth">{{ playerhealth }}</div>
                 </div>
                 <p>Attack Power: {{ playerAttackPower }}</p>
                 <p>Defense Power: {{ playerDefensePower }}</p>
@@ -29,7 +29,7 @@
             <div class="col">
                 <h2 class="text-center">Enemy</h2>
                 <div class="progress">
-                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" v-bind:style="{width: enemyHealt + '%'}" v-bind:aria-valuenow="enemyHealt" aria-valuemin="0" v-bind:aria-valuemax="enemyMaxHealt">{{ enemyHealt }}</div>
+                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" v-bind:style="{width: enemyhealth + '%'}" v-bind:aria-valuenow="enemyhealth" aria-valuemin="0" v-bind:aria-valuemax="enemyMaxhealth">{{ enemyhealth }}</div>
                 </div>
                 <p>Attack Power: {{ enemyAttackPower }}</p>
                 <p>Defense Power: {{ enemyDefensePower }}</p>
