@@ -15,7 +15,7 @@
 <body>
     <div class="container" id="app">
         <div class="row justify-content-md-center">
-            <h1>A Strange Vame <span class="badge badge-secondary">Top Score: 0</span></h1>
+            <h1>A Strange Vame <span class="badge badge-secondary">Top Score: {{ topScore() }}</span></h1>
         </div>
         <div class="row">
             <div class="col">
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="row justify-content-md-center m-5">
-            <h2>War Output</h2>
+            <h2>Score: {{ score }}</h2>
         </div>
     </div>
 
