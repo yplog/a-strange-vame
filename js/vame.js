@@ -10,6 +10,7 @@ new Vue({
         enemyhealth: 0,
         enemyMaxhealth: 0,
         score: 0,
+        newGameDisable: false,
     },
     methods: {
         d20: function(){
@@ -21,6 +22,7 @@ new Vue({
             this.playerhealth = this.d20() * 5;
             this.playerMaxhealth = this.playerhealth;
             this.generateEnemy();
+            this.newGameDisable = true;
         },
         playerAttack: function(){
             if (this.enemyhealth > 0) {
@@ -63,6 +65,8 @@ new Vue({
                 }
             } else if (this.playerhealth < 0){
                 alert("You Lost!");
+                this.saveTopScore(this.score);
+                this.newGameDisable = false;
             }
         },
         generateEnemy() {

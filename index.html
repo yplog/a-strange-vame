@@ -42,7 +42,7 @@
             <div class="col-auto">
                 <button type="button" class="btn btn-secondary" v-on:click="playerDefense">Defense</button>
                 <button type="button" class="btn btn-danger" v-on:click="playerAttack">Attack</button>
-                <button type="button" class="btn btn-dark" v-on:click="newGame">New Game</button>
+                <button type="button" class="btn btn-dark" v-on:click="newGame" v-bind:disabled="newGameDisable">New Game</button>
             </div>
         </div>
         <div class="row justify-content-md-center m-5">
