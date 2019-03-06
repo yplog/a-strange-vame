@@ -72,6 +72,8 @@ new Vue({
                 alert("You Lost!");
                 this.saveTopScore(this.score);
                 this.newGameDisable = false;
+                this.attackButton = true;
+                this.defenseButton = true;
             }
         },
         generateEnemy() {
