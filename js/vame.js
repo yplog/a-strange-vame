@@ -11,6 +11,8 @@ new Vue({
         enemyMaxhealth: 0,
         score: 0,
         newGameDisable: false,
+        attackButton: true,
+        defenseButton: true
     },
     methods: {
         d20: function(){
@@ -23,6 +25,9 @@ new Vue({
             this.playerMaxhealth = this.playerhealth;
             this.generateEnemy();
             this.newGameDisable = true;
+            this.attackButton = false;
+            this.defenseButton = false;
+            this.score = 0;
         },
         playerAttack: function(){
             if (this.enemyhealth > 0) {

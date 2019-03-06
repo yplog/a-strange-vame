@@ -40,8 +40,8 @@
         </div>
         <div class="row justify-content-md-center">
             <div class="col-auto">
-                <button type="button" class="btn btn-secondary" v-on:click="playerDefense">Defense</button>
-                <button type="button" class="btn btn-danger" v-on:click="playerAttack">Attack</button>
+                <button type="button" class="btn btn-secondary" v-on:click="playerDefense" v-bind:disabled="defenseButton">Defense</button>
+                <button type="button" class="btn btn-danger" v-on:click="playerAttack" v-bind:disabled="attackButton">Attack</button>
                 <button type="button" class="btn btn-dark" v-on:click="newGame" v-bind:disabled="newGameDisable">New Game</button>
             </div>
         </div>
